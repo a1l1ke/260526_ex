@@ -28,6 +28,7 @@ o.bb = 12345; // 식별자 규칙을 위반하지 않는 (공백, 특수문자) 
 // map.set(키, 값)
 map.set("aa", 1234);
 map.set("bb", 12345);
+// 없으면 새로운 값을 넣고, 있으면 덮어씌우는...
 
 // CRUD <- 다 거침
 
@@ -69,3 +70,19 @@ for (const c of map) {
 // 객체는 스스로 길이 관련된 게 X
 console.log(Object.values(o).length);
 console.log(map.size);
+
+const m = new Map();
+m.set("counter", 0); // 이게 있어서 초기값이 있다면
+if (m.has("counter") && typeof m.get("counter") == "number") {
+  m.set("counter", m.get("counter") + 1); // +1
+} else {
+  m.set("counter", 0);
+}
+console.log(m);
+
+// 2. map vs map
+const mm = new Map();
+[].map() 
+// Array.from(mm.entries()).map()
+
+
