@@ -36,7 +36,37 @@ console.log("s.has(1234)", s.has(1234));
 s.add(1234);
 s.add(12345);
 s.add(123456);
+
 // s.has, s.size
 for (const c of s) {
   console.log(c);
 }
+
+// set vs set
+// 자료구조 set : 1. 밸류가 곧 키인 (중복 제거 연산) 2. 집합 연산을 지원하는 자료구조 (부분집합)
+// 일반적인 프로그래밍에서의 set : 접근자 setter (get/set). 설정. 대입.
+
+// set되지 않은 키 호출 했을 때
+const o = {};
+console.log("o.a", o.a); // undefined
+const mmm = new Map();
+console.log("mmm.get('a')", mmm.get("a")); // undefined
+// Java, Python -> 없는 키를 호출 했을 때의 대응이 다르다
+// Java (get): 없는 것 호출하면 null
+// getOrDefault...
+// Python ([]): key Error
+// Python (get): None
+// setdefault...
+
+// has로 체크를 해서 true, false로 만들거나 비교연산자등 테크닉으로 truthy, falsy, undefined를 대응하는 ?? 연산자 등을 활용
+
+// ... 연산자를 사용을 해서...
+const oo = { a: 1234, b: 12345 };
+console.log([...Object.entries(oo)]);
+const aa = ["a", "a", "a", "d", "d"];
+const sss = new Set(aa);
+const aa2 = [...sss]; // set은 for문으로 push해서 넣든가 해야하는데...
+// 분해할당을 시켜서 추가해주시면 처리할 수 있다
+console.log(aa, aa2);
+
+// 자바 때 좀 더 제대로 + 문제 풀이
