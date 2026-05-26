@@ -115,4 +115,22 @@ console.log(
     return prev + cur; // 다음 회차의 prev
   }, 100),
 );
+// 2. 객체, 배열
 // reduce(fn(prev, cur, i, a), [초기값])
+// reduce는 배열을 '한 개의 값'으로 변환
+console.log(
+  a4.reduce((prev, cur) => {
+    // 최초의 직전값(prev)은 0번째 인덱스. -> 1번째 인덱스(cur) 연산
+    console.log("prev", prev, "cur", cur);
+    prev.push(cur ** 2);
+    return prev;
+  }, []),
+);
+console.log(
+  a4.reduce((prev, cur) => {
+    // 최초의 직전값(prev)은 0번째 인덱스. -> 1번째 인덱스(cur) 연산
+    console.log("prev", prev, "cur", cur);
+    if (cur % 2 == 0) prev.push(cur); // 한줄이면 블록 생략 가능 (블록이 한 줄의 표현(expression)을 확장하는 개념)
+    return prev;
+  }, []),
+);
